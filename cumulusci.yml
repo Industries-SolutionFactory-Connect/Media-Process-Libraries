@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.68.0.dev2'
+project:
+    name: Media-Process-Libraries
+    package:
+        name: Media-Process-Libraries
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Media-Process-Libraries/tests
+            options:
+                outputdir: robot/Media-Process-Libraries/results
+
+    robot_testdoc:
+        options:
+            path: robot/Media-Process-Libraries/tests
+            output: robot/Media-Process-Libraries/doc/Media-Process-Libraries_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
